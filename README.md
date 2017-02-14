@@ -1,1 +1,1 @@
-# Some of Telerik Academy Team Projects i Have Participated In
+# Some of the Team Projects i Have Participated in Telerik Academy.
