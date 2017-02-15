@@ -1,0 +1,39 @@
+{
+  "name": "super-secret-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test --recursive --reporter spec",
+    "postinstall": "bower install",
+    "start": "http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Watchmen/super-secret-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Watchmen/super-secret-project/issues"
+  },
+  "homepage": "https://github.com/Team-Watchmen/super-secret-project#readme",
+  "engines": {
+    "node": "6.2.1",
+    "npm": "3.9.3"
+  },
+  "dependencies": {
+    "bower": "1.7.9",
+    "crypto-js": "^3.1.6",
+    "handlebars": "^4.0.5",
+    "http-server": "^0.9.0",
+    "sammy": "^0.7.6",
+    "systemjs": "^0.19.38",
+    "systemjs-plugin-babel": "0.0.15",
+    "toastr": "^2.1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
