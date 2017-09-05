@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Cycling.master.cs" Inherits="Cycling.Web.Cycling" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="CSS/CyclingStyles.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <ul class="nav nav-pills nav-justified">
+                <li role="presentation" class="active"><a href="Home.aspx">Home</a></li>
+                <li role="presentation"><a href="AddCyclist.aspx">Add New Cyclist</a></li>
+                <li role="presentation"><a href="UpdateCyclistPage.aspx">Update Cyclist</a></li>
+                <li role="presentation"><a href="SearchForCyclist.aspx">Find Cyclist</a></li>
+                <li role="presentation"><a href="DeleteCyclist.aspx">Remove Cyclist</a></li>
+                <li role="presentation"><a href="Cyclists.aspx">Cyclists Statistics</a></li>
+                <li role="presentation"><a href="SQLiteAndPostgre.aspx">SQLite & PostgreSQL</a></li>
+            </ul>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderCycling" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
