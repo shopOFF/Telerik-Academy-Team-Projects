@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col s12 m7">
+        <div class="card">
+            <span class="card-title">Upload New Images</span>
+            <div>
+                <input type="file" class="waves-effect waves-light btn" id="file-upload" (change)="handleFiles($event)" multiple>
+                <div class="space">
+                    <button class="waves-effect waves-light btn-large" (click)="uploadFiles()" [disabled]="!isSendingFilesEnabled">Upload Images</button>
+                </div>
+            </div>
+            <div *ngIf="upload">
+                <div class="progress">
+                    <div class="determinate" [ngStyle]="{'width': upload?.progress + '%'}"></div>
+                </div>
+                Progress: {{upload?.progress}}% Complete
+            </div>
+        </div>
+    </div>

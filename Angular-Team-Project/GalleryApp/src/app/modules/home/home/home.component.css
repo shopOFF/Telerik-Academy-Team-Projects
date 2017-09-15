@@ -1,0 +1,18 @@
+.card-text {
+    font-size: 17px;
+    color: black;
+}
+
+.card-title {
+    font-weight: normal;
+}
+
+.wall {
+    height: 550px;
+}
+
+.card {
+    display: inline-block;
+    padding: 10px;
+    width: 1000px;
+}

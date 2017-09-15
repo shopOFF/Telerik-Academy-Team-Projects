@@ -1,0 +1,24 @@
+<div class="row" id="card-container">
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content black-text">
+                <span class="card-title">New User Signup</span>
+            </div>
+            <div class="card-action">
+                <form class="col s12" (ngSubmit)="signUp(formData)" #formData='ngForm'>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="email" (ngModel)="email" #email="ngModel" name="email" class="validate" maxlength="50" minlength="5" required pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
+                            <label for="email">Email Address</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="password" (ngModel)="password" #password="ngModel" name="password" class="validate" minlength="5" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <input type="button" class="waves-effect waves-light btn-large" (click)="signUp(formData)" value="Sign Up" [disabled]="!formData.valid">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

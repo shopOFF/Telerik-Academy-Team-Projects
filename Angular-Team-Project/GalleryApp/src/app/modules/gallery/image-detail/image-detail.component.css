@@ -1,0 +1,14 @@
+.img-container {
+    margin: 30px;
+    min-height: 466px;
+    min-width: 466px;
+    box-shadow: #666 1px 2px 8px 1px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1100px 466px;
+    align-content: center;
+}
+
+.card-title {
+    font-weight: normal;
+}

@@ -1,0 +1,9 @@
+.card {
+    display: inline-block;
+    padding: 10px;
+    width: 700px;
+}
+
+.card-title {
+    font-weight: normal;
+}

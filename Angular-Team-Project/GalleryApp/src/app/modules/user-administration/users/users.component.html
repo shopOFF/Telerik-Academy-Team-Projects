@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col s12 m7">
+        <div class="card">
+            <span class="card-title">List Of Users That Have Registered With Email and Password</span>
+            <div class="card-action">
+                <ul>
+                    <li *ngFor="let user of users | async; let myIndex = index" class="img">
+                        <div class="card-content">
+                            <p>{{myIndex+1}} - {{user.email}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

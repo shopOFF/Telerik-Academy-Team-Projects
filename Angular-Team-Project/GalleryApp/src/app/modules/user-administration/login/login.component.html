@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content black-text">
+                <span class="card-title">Select a Login Method</span>
+            </div>
+            <div class="card-action">
+                <a class="waves-effect waves-light btn-large" (click)="googleLogin()" id="google" appChangeButtonColor>Login With Google</a>
+                <a class="waves-effect waves-light btn-large" (click)="facebookLogin()" id="fb" appChangeButtonColor>Login With Facebook</a>
+                <a class="waves-effect waves-light btn-large" routerLink="/user/email-login" id="email" appChangeButtonColor>Email Login</a>
+            </div>
+        </div>
+        <h6>
+            <a routerLink="/user/signup" routerLinkActive="active">No Account? <strong>Create One Here</strong></a>
+        </h6>
+    </div>
+</div>
