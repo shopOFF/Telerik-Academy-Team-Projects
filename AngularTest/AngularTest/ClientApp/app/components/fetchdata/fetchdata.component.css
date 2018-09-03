@@ -1,0 +1,23 @@
+﻿body {
+}
+
+.backgroundRed {
+    background: LightSalmon
+}
+
+.eventRow:nth-child(even) {
+    background: AliceBlue
+}
+
+.eventRow:nth-child(odd) {
+    background: HoneyDew
+}
+#buttonWithLeftMargin {
+    margin-left: 10px;
+}
+
+#tableNoBorders {
+    border-bottom: none;
+    border-right: none;
+    background-color: #ffffff;
+}
