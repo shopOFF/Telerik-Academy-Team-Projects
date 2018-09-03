@@ -1,0 +1,10 @@
+﻿
+<div *ngIf="showMePartially">
+    <button label="Click" type="button" class="btn btn-info">Edit</button>
+
+    <button label="Click" type="button" class="btn btn-info">Delete</button>
+</div> 
+
+<div *ngIf="showMe">
+    <button label="Click" (click)="addNewEvent()" type="button" class="btn btn-info pull-left">Add New</button>
+</div> 

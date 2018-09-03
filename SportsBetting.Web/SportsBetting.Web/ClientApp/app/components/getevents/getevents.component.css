@@ -1,0 +1,12 @@
+﻿body {
+}
+.backgroundRed {
+    background: LightSalmon
+}
+.eventRow:nth-child(even) {
+    background: AliceBlue
+}
+.eventRow:nth-child(odd) {
+    background: HoneyDew
+}
+

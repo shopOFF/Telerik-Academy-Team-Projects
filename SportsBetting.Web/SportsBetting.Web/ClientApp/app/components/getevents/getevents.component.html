@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<h1>Football Events</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!editEvent"><em>Loading...</em></p>
+
+<button label="Click" (click)="toggle()" id="bt" type="button" class="btn btn-info pull-right">{{buttonName}}</button>
+
+<br />
+<br />
+<table class="table table-bordered" *ngIf="editEvent">
+    <thead>
+        <tr>
+            <ng-container *ngIf="show">
+                <th scope="col">EventID</th>
+            </ng-container>
+            <th scope="col">EventName</th>
+            <th scope="col">OddsForFirstTeam</th>
+            <th scope="col">OddsForDraw</th>
+            <th scope="col">OddsForSecondTeam</th>
+            <th scope="col">EventStartDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let event of editEvent" [ngClass]="(event.isEventPassed)?'backgroundRed':'eventRow'" id="elRow">
+            <ng-container *ngIf="show">
+                <th scope="row">{{event.eventID}}</th>
+            </ng-container>
+            <td (keyup)="changeValue(id, 'eventName', $event)">{{event.eventName}}</td>
+            <td>{{event.oddsForFirstTeam | number : '1.2'}}</td>
+            <td>{{event.oddsForDraw | number : '1.2'}}</td>
+            <td>{{event.oddsForSecondTeam | number : '1.2'}}</td>
+            <td>{{event.eventStartDate | date:'dd/MM/yyyy'}}</td>
+
+            <ng-container *ngIf="show">
+                <button label="Click" type="button" class="btn btn-info">Edit</button>
+
+                <button label="Click" type="button" class="btn btn-info">Delete</button>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>
+
+<ng-container *ngIf="show">
+    <button label="Click" (click)="addNewEvent()" type="button" class="btn btn-info pull-left">Add New Event</button>
+</ng-container>
