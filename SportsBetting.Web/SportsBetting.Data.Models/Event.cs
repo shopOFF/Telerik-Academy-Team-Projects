@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SportsBetting.Data.Models
 {
-    public class Event : IEvent
+    public class Event : IEvent, IDeletableEntity
     {
         private bool isEventPassed;
 
@@ -27,6 +27,9 @@ namespace SportsBetting.Data.Models
         {
             get { return this.DetermineIfEventIsPassed(); }
         }
+
+        public bool IsDeleted { get; set; }
+        public DateTime? DeletedOn { get; set; }
 
         private bool DetermineIfEventIsPassed()
         {

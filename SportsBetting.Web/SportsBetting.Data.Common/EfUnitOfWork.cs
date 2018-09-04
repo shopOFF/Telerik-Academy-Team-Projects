@@ -1,4 +1,5 @@
 ﻿using SportsBetting.Data.Common.Contracts;
+using System;
 
 namespace SportsBetting.Data.Common
 {
@@ -13,7 +14,14 @@ namespace SportsBetting.Data.Common
 
         public void Commit()
         {
-            this.dbContext.SaveChanges();
+            try
+            {
+               this.dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Db context Exception!" + ex);
+            }
         }
     }
 }

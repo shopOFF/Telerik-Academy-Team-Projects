@@ -1,13 +1,13 @@
-﻿using SportsBetting.Data.Common.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using SportsBetting.Data.Common.Contracts;
+using SportsBetting.Data.Models;
 using System;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 
 namespace SportsBetting.Data.Common.Repositories
 {
     public class EfRepository<T> : IEfRepository<T>
-         where T : class//, IDeletableEntity
+         where T : class, IDeletableEntity
     {
         private readonly SportsBettingDbContext dbContext;
 
@@ -20,7 +20,7 @@ namespace SportsBetting.Data.Common.Repositories
         {
             get
             {
-                return this.dbContext.Set<T>(); //.Where(x => !x.IsDeleted);
+                return this.dbContext.Set<T>().Where(x => !x.IsDeleted);
             }
         }
 
@@ -40,10 +40,11 @@ namespace SportsBetting.Data.Common.Repositories
 
         public void Delete(T entity)
         {
-           // entity.IsDeleted = true;
-           // entity.DeletedOn = DateTime.Now;
+            entity.IsDeleted = true;
+            entity.DeletedOn = DateTime.Now;
 
             var entry = this.dbContext.Entry(entity);
+            entry.State = EntityState.Modified;
         }
 
         public void DeleteForever(T entity)
@@ -53,7 +54,13 @@ namespace SportsBetting.Data.Common.Repositories
 
         public void Update(T entity)
         {
-            this.dbContext.Set<T>().Attach(entity);
+            var entry = this.dbContext.Entry(entity);
+            if (entry.State == EntityState.Detached)
+            {
+                this.dbContext.Set<T>().Attach(entity);
+            }
+
+            entry.State = EntityState.Modified;
         }
     }
 }
